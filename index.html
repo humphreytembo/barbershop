@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hute Barbershop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts for Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+</head>
+
+<body>
+
+  <!--loader-->
+  <div id="loader">
+    <div class="pulse"></div>
+  </div>
+   <style>
+    /* Fullscreen loader overlay */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #111; /* dark background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Pulse animation */
+    .pulse {
+      width: 40px;
+      height: 40px;
+      background: #2ecc71;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 1; }
+      70% { transform: scale(1.5); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 1; }
+    }
+
+    /* Hide content until loaded */
+    #content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+
+   <script>
+    // Hide loader when page is fully loaded
+    window.addEventListener("load", function() {
+      const loader = document.getElementById("loader");
+      const content = document.getElementById("content");
+
+      // Add fade-out effect
+      loader.style.transition = "opacity 0.5s ease";
+      loader.style.opacity = "0";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        content.style.display = "block";
+      }, 500); // wait for fade-out
+    });
+  </script>
+  
+  <!-- Mobile Sidebar Menu Button -->
+  <button class="sidebar-menu-button">
+    <span class="material-symbols-rounded">menu</span>
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Sidebar Header -->
+    <header class="sidebar-header">
+      <img src="Logo.jpg" class="logo" alt="logo" />
+      <button class="sidebar-toggler">
+        <span class="material-symbols-rounded">chevron_left</span>
+      </button>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-nav">
+      <ul class="nav-list primary-nav">
+        <li class="nav-item">
+          <a href="#home" class="nav-link">
+            <span class="material-symbols-rounded">home</span>
+            <span class="nav-label">Home</span>
+          </a>
+        </li>
+
+        <!-- About -->
+        <li class="nav-item">
+          <a href="#about" class="nav-link">
+            <span class="material-symbols-rounded">person</span>
+            <span class="nav-label">About</span>
+          </a>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item dropdown-container">
+          <a href="#" class="nav-link dropdown-toggle">
+            <span class="material-symbols-rounded">content_cut</span>
+            <span class="nav-label">Services</span>
+            <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a class="nav-link dropdown-title">Services</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link dropdown-link">Haircuts</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link dropdown-link">Beard Trim</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link dropdown-link">Shaving</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link dropdown-link">Kids Cuts</a></li>
+          </ul>
+        </li>
+
+        <!-- Gallery -->
+        <li class="nav-item">
+          <a href="Gallary.html" class="nav-link">
+            <span class="material-symbols-rounded">photo_library</span>
+            <span class="nav-label">Gallery</span>
+          </a>
+        </li>
+
+        <!-- Contact -->
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">
+            <span class="material-symbols-rounded">call</span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Secondary Navigation -->
+      <ul class="nav-list secondary-nav">
+        <li class="nav-item">
+          <a href="https://wa.me/260766702923?text=Hello%20TomTinaria%20Barbershop%2C%20I%20would%20like%20to%20book%20a%20haircut"
+            target="_blank" class="nav-link">
+            <span class="material-symbols-rounded">chat</span>
+            <span class="nav-label">WhatsApp</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">
+            <span class="material-symbols-rounded">event</span>
+            <span class="nav-label">Book Now</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="home-page" id="home">
+    <div class="home-content">
+      <h1>Welcome to TomTinaria Barbershop</h1>
+      <p>Your Style, Our Passion.</p>
+      <br>
+      <button class="Appointment"><a
+          href="https://wa.me/260766702923?text=Hello%20%20Barbershop%2C%20I%20would%20like%20to%20book%20a%20haircut">Make
+          An Appointment</a></button>
+
+    </div>
+
+  </div>
+
+  <div class="About-page" id="about">
+    <div>
+      <img src="about-image.jpg" alt="Barbershop Image" style="width:100%; height:auto;" />
+    </div>
+    <div class="about-content">
+      <h2>About TomTinaria Barbershop</h2>
+      <br>
+      <p>Welcome to TomTinaria Barbershop, where tradition meets modern style. Our skilled barbers are dedicated to
+        providing top-notch grooming services in a friendly and welcoming environment. Whether you're looking for a
+        classic haircut, a stylish beard trim, or a relaxing shave, we've got you covered.</p>
+
+    </div>
+    <div class="about-info">
+      <ul class="info-list">
+        <li><i class="fa-solid fa-envelope"></i> <span class="highlight">Email:</span> thomasphiri740@gmail.com</li>
+        <li><i class="fa-solid fa-phone"></i> <span class="highlight">Phone:</span> +260 7667 702 923</li>
+        <li><i class="fa-solid fa-location-dot"></i> <span class="highlight">Location:</span>Chamboli town, Kitwe</li>
+        <li><i class="fa-solid fa-scissors"></i> <span class="highlight">Experience:</span>10+ Years</li>
+        <li><i class="fa-solid fa-users"></i> <span class="highlight">Team:</span> Skilled & Friendly Barbers</li>
+        <li><i class="fa-solid fa-clock"></i> <span class="highlight">Working Hours:</span> Mon - Sun (08:00 - 20:00)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Services Section -->
+  <div class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+
+      <div class="service">
+        <img src="classic.jpg" alt="Haircut Service">
+        <h3>Classic Haircuts</h3>
+        <p>Get the perfect cut tailored to your style with precision and care.</p>
+      </div>
+
+      <div class="service">
+        <img src="beard.jpg" alt="Beard Trim Service">
+        <h3>Beard Trims</h3>
+        <p>Keep your beard sharp, clean, and stylish with expert trims.</p>
+      </div>
+
+      <div class="service">
+        <img src="luxury.jpg" alt="Shaving Service">
+        <h3>Luxury Shaves</h3>
+        <p>Experience the ultimate relaxing shave with premium products.</p>
+      </div>
+
+      <div class="service">
+        <img src="styling.jpg" alt="Hair Styling">
+        <h3>Hair Styling</h3>
+        <p>Modern and trendy hairstyles to match your personality.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="pricing-section">
+    <h2>Our Pricing</h2>
+    <p>We offer competitive pricing for all our services.</p>
+    <div class="divider">
+      <span></span>
+      <i class="fa-brands fa-slack"></i>
+      <span></span>
+    </div>
+
+    <div class="pricing-container">
+      <div class="pricing-item">
+        <h3>Haircut For Adults <span>K25.00</span></h3>
+        <p>Our stylist consults & delivers you a precision haircut.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Haircut For Adults With Dye <span>K30.00</span></h3>
+        <p>Our stylist consults & delivers you a precision haircut.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Moustache Trim <span>K10.00</span></h3>
+        <p>Select & Change your moustache style for a fresh look.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Beard Trim <span>K10.00</span></h3>
+        <p>Keep your beard clean and sharp with an awesome style.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Hair Wash <span>K10.00</span></h3>
+        <p>Relax and have a hot towel for cleaning your face.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Lining <span>10.00</span></h3>
+        <p>Enjoy a clean and refreshing shave with precision.</p>
+      </div>
+      <div class="pricing-item">
+        <h3>Kids Cut <span>K15.00</span></h3>
+        <p>Fun and stylish haircuts designed for kids.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="testimonial-section">
+    <h2>What Our Clients Say</h2>
+
+    <div class="testimonial active">
+      <img src="client-1.jpg" alt="Client 1">
+      <p>"The best barbershop in town! The staff is friendly and skilled, I always leave looking fresh."</p>
+      <h4>- Humphrey.</h4>
+    </div>
+
+    <div class="testimonial">
+      <img src="client-2.jpg" alt="Client 2">
+      <p>"I love the attention to detail. They always make sure I’m satisfied with my cut."</p>
+      <h4>- Derick.</h4>
+    </div>
+
+    <div class="testimonial">
+      <img src="client-3.jpg" alt="Client 3">
+      <p>"Clean environment, professional service, and great vibes. Highly recommend!"</p>
+      <h4>- Kelvin.</h4>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevTestimonial()">⬅ Prev</button>
+      <button onclick="nextTestimonial()">Next ➡</button>
+    </div>
+  </div>
+
+  <div class="contact-section" id="contact">
+    <!-- Map Section -->
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d697.6785716514877!2d28.223651269459527!3d-12.857505691736366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUxJzI3LjAiUyAyOMKwMTMnMjcuNSJF!5e1!3m2!1sen!2szm!4v1756823961280!5m2!1sen!2szm"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+        width="100%"
+        height="100%"
+        style="border:0; border-radius:12px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+      <h2>Get in Touch</h2>
+      <form id="contact-form"> 
+        <input type="text" name="name" placeholder="Your Name" required> 
+        <input type="email" name="email" placeholder="Your Email" required> 
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Your Message" required></textarea> 
+        <button type="submit">Send Message</button> 
+      </form>
+      <p id="form-status" style="text-align:center; margin-top:10px; font-weight:bold;"></p>
+    </div>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        // Replace with your exact PUBLIC KEY from EmailJS dashboard
+        emailjs.init("83IG40zF4LAkRVrkn");
+      })();
+
+      document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const status = document.getElementById("form-status");
+        status.style.color = "black";
+        status.innerText = "Sending...";
+
+        emailjs.sendForm("service_kbsj89t", "template_xojwwaq", this)
+          .then(() => {
+            status.style.color = "green";
+            status.innerText = "✅ Message sent successfully!";
+            this.reset();
+          })
+          .catch((error) => {
+            status.style.color = "red";
+            status.innerText = "❌ Failed to send: " + JSON.stringify(error);
+          });
+      });
+    </script>
+
+
+
+  </div>
+  <footer style="background:#111; color:#eee; padding:40px 10px; margin-top:50px;">
+    <div style="max-width:1000px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;">
+
+      <!-- Brand -->
+      <div style="flex:1; min-width:220px;">
+        <h2 style="color:#5a2dff; margin-bottom:15px; font-weight:bold;">TomTinaria Barbershop</h2>
+        <p style="line-height:1.6; color:#ccc; font-weight:normal;">
+          Where tradition meets modern style. Every cut is a masterpiece.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="flex:1; min-width:180px;">
+        <h3 style="margin-bottom:15px; font-weight:bold;">Quick Links</h3>
+        <ul style="list-style:none; padding:0; line-height:2; font-weight:normal;">
+          <li><a href="#" style="color:#ccc; text-decoration:none;">Home</a></li>
+          <li><a href="#about" style="color:#ccc; text-decoration:none;">About</a></li>
+          <li><a href="#services" style="color:#ccc; text-decoration:none;">Services</a></li>
+          <li><a href="#contact" style="color:#ccc; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex:1; min-width:220px;">
+        <h3 style="margin-bottom:15px; font-weight:bold;">Contact</h3>
+        <p style="font-weight:normal;"><i class="fa-solid fa-phone"></i> +260 7667 702 923</p>
+        <p style="font-weight:normal;"><i class="fa-solid fa-envelope"></i> thomasphiri740@gmail.com</p>
+        <p style="font-weight:normal;"><i class="fa-solid fa-location-dot"></i> Plot 534, Chamboli, Kitwe</p>
+      </div>
+
+      <!-- Social Media -->
+      <div style="flex:1; min-width:180px;">
+        <h3 style="margin-bottom:15px; font-weight:bold;">Follow Us</h3>
+        <a href="#" style="color:#eee; margin-right:10px; font-size:20px; font-weight:normal;"><i
+            class="fa-brands fa-facebook"></i></a>
+        <a href="#" style="color:#eee; margin-right:10px; font-size:20px; font-weight:normal;"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="#" style="color:#eee; margin-right:10px; font-size:20px; font-weight:normal;"><i
+            class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div
+      style="text-align:center; margin-top:30px; padding-top:15px; border-top:1px solid #333; color:#aaa; font-size:14px; font-weight:normal;">
+      © 2025 TomTinaria Barbershop. All Rights Reserved. | Designed by HUTE Technologies
+    </div>
+  </footer>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script>
+    let index = 0;
+    const testimonials = document.querySelectorAll(".testimonial");
+    function showTestimonial(n) {
+      testimonials.forEach((t, i) => {
+        t.classList.remove("active");
+        if (i === n) t.classList.add("active");
+      });
+    }
+    function nextTestimonial() {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }
+    function prevTestimonial() {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    }
+    // Auto slide every 5 seconds
+    setInterval(nextTestimonial, 5000);
+  </script>
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
