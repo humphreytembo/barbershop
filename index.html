@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TomTinaria Barbershop</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -28,6 +30,40 @@
 </head>
 
 <body>
+
+  <!-- whatsapp image -->
+   <a href="https://wa.me/260766702923?text=Hello%20TomTinaria%20Barbershop" 
+   target="_blank" 
+   class="whatsapp-float">
+   <i class='bx bxl-whatsapp'></i>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;       /* stays in place while scrolling */
+    bottom: 20px;          /* distance from bottom */
+    right: 20px;           /* distance from right */
+    z-index: 1000;         /* above other elements */
+    background-color: #25D366;  /* WhatsApp green */
+    color: white;
+    border-radius: 50%;    /* circle button */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    font-size: 30px;       /* icon size */
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* small bounce effect */
+    cursor: pointer;
+}
+
+
+</style>
 
   <!--loader-->
   <div id="loader">
